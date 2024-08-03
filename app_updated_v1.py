@@ -111,18 +111,18 @@ def process_df(api_key, df):
         st.download_button(label="Download Sentiment Analysis Results", data=file, file_name=output_file_path)
 
 # Streamlit app layout
-st.title("News Sentiment Analysis Dashboard")
+st.title("Sentiment Analysis Dashboard")
 
 # Get API keys and parameters
 openai_api_key, news_api_key, keyword, from_date, to_date = get_api_keys_and_params()
 
-# Radio button to choose between uploading a file or fetching news
-option = st.sidebar.radio("Choose an option", ("Upload CSV File", "Fetch News"))
-
 if openai_api_key:
+    # Sidebar radio button to choose between uploading a file or fetching news
+    option = st.sidebar.radio("Choose an option", ("Upload CSV File", "Fetch News"))
+
     if option == "Upload CSV File":
         st.write("Upload a CSV file containing 'description' and 'publishedAt' columns to analyze sentiment.")
-        uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+        uploaded_file = st.file_uploader("Drag and drop a file here or click to browse", type="csv")
         if uploaded_file is not None:
             df = pd.read_csv(uploaded_file)
             process_df(openai_api_key, df)
