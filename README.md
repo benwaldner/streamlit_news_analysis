@@ -17,8 +17,14 @@ Potential services:
 - Google Trends
 - Alternative news sources / apiservices
 - More data
-- Prices
 
+- Prices
+- Adding Econ-kw
+- Hourly graph based on sentiment score
+- Feature sentiment to price diff.
+- Google Trend peaks
+- Email alerts
+ 
 if you have questions reach out to me on linkedin or twitter, same user name.
 
 Deploy on streamlit or on your local machine (even bugged win cmd with no openai migration support):
