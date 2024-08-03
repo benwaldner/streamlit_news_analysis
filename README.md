@@ -1,4 +1,4 @@
-- v1.py currently bugged
+- pytrends.py currently bugged
 
 
 # streamlit_news_analysis
