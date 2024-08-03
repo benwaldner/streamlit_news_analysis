@@ -1,3 +1,6 @@
+- v1.py currently bugged
+
+
 # streamlit_news_analysis
 streamlit_news_analysis
 
