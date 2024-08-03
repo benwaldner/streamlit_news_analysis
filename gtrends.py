@@ -7,6 +7,44 @@ from textblob import TextBlob
 import requests
 from datetime import datetime, timedelta
 
+
+import pytrends
+
+from pytrends.request import TrendReq
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Initialize pytrends
+pytrends = TrendReq()
+
+# Function to get Google Trends data
+def get_trends_data(keyword, timeframe):
+    pytrends.build_payload(kw_list=[keyword], timeframe=timeframe)
+    data = pytrends.interest_over_time()
+    return data
+
+# Fetch data
+keyword = 'bitcoin'  # You can change this keyword
+#timeframe = 'today 7-d'  # You can change this timeframe
+timeframe = "2024-01-03 2024-08-03"
+data = get_trends_data(keyword, timeframe)
+pd.set_option('future.no_silent_downcasting', True)
+
+# Display the data
+data.head()
+
+data.tail()
+
+# Plot the data
+plt.figure(figsize=(12, 6))
+plt.plot(data.index, data[keyword], label=f'Interest Over Time for "{keyword}"')
+plt.xlabel('Date')
+plt.ylabel('Interest')
+plt.title(f'Google Trends Data for "{keyword}"')
+plt.legend()
+plt.grid(True)
+plt.show()
+
 '''
 # Function to get API keys and parameters from user input
 def get_api_keys_and_params():
@@ -147,40 +185,5 @@ else:
 
 
 '''
-import pytrends
 
-from pytrends.request import TrendReq
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Initialize pytrends
-pytrends = TrendReq()
-
-# Function to get Google Trends data
-def get_trends_data(keyword, timeframe):
-    pytrends.build_payload(kw_list=[keyword], timeframe=timeframe)
-    data = pytrends.interest_over_time()
-    return data
-
-# Fetch data
-keyword = 'bitcoin'  # You can change this keyword
-#timeframe = 'today 7-d'  # You can change this timeframe
-timeframe = "2024-01-03 2024-08-03"
-data = get_trends_data(keyword, timeframe)
-pd.set_option('future.no_silent_downcasting', True)
-
-# Display the data
-data.head()
-
-data.tail()
-
-# Plot the data
-plt.figure(figsize=(12, 6))
-plt.plot(data.index, data[keyword], label=f'Interest Over Time for "{keyword}"')
-plt.xlabel('Date')
-plt.ylabel('Interest')
-plt.title(f'Google Trends Data for "{keyword}"')
-plt.legend()
-plt.grid(True)
-plt.show()
 
