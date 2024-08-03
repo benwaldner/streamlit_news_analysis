@@ -1,3 +1,5 @@
+'''
+
 import openai
 import pandas as pd
 import streamlit as st
@@ -143,6 +145,10 @@ if openai_api_key:
             st.warning("Please enter your NewsAPI key in the sidebar.")
 else:
     st.warning("Please enter your OpenAI API key in the sidebar.")
+
+
+'''
+import pytrends
 
 from pytrends.request import TrendReq
 import pandas as pd
