@@ -17,6 +17,7 @@ Potential services:
 - Google Trends
 - Alternative news sources / apiservices
 - More data
+- Prices
 
 if you have questions reach out to me on linkedin or twitter, same user name.
 
