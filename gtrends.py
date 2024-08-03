@@ -1,6 +1,4 @@
-'''
-
-import openai
+#import openai
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -9,6 +7,7 @@ from textblob import TextBlob
 import requests
 from datetime import datetime, timedelta
 
+'''
 # Function to get API keys and parameters from user input
 def get_api_keys_and_params():
     st.sidebar.header("API Keys and Parameters")
