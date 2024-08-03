@@ -16,7 +16,7 @@ def get_api_keys_and_params():
     
     # NewsAPI Key and Parameters
     news_api_key = st.sidebar.text_input("Enter your NewsAPI API Key:", type="password")
-    keyword = st.sidebar.text_input("Enter search keyword:", value="bitcoin")
+    keyword = st.sidebar.text_input("Enter search keyword:", value="adele")
     from_date = st.sidebar.date_input("From Date:", value=datetime.now() - timedelta(days=7))
     to_date = st.sidebar.date_input("To Date:", value=datetime.now())
     
